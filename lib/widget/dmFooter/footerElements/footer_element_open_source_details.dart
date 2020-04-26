@@ -40,7 +40,7 @@ class FooterElementOpenSourceDetails extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: (){
+          onTap: () {
 //            js.context.callMethod("open", ["https://github.com/ravishankarsingh1996"]);
           },
           child: Padding(
@@ -52,7 +52,7 @@ class FooterElementOpenSourceDetails extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: (){
+          onTap: () {
 //            js.context.callMethod("open", ["https://github.com/nishantml"]);
           },
           child: Padding(
