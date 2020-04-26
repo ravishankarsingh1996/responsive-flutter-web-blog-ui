@@ -25,16 +25,16 @@ class _BlogListWidgetState extends State<BlogListWidget> {
       child: ListView.builder(
         itemBuilder: (context, index) {
           return DmBlogPostCard(
-              imageUrl:
-              "https://miro.medium.com/max/1400/1*IH3OuU2Tr9lBdCl76JPGUQ@2x.png",
-              title: listItemTitleText,
-              shortDescription: listItemPreviewText,
-              postTag: 'Trending',
+            imageUrl:
+            "https://miro.medium.com/max/1400/1*IH3OuU2Tr9lBdCl76JPGUQ@2x.png",
+            title: listItemTitleText,
+            shortDescription: listItemPreviewText,
+            postTag: 'Trending',
             publisherImageUrl: 'https://avatars2.githubusercontent.com/u/20386271?s=400&u=f323c0d5aca3da5eaecc183a3cf6abff6002df21&v=4',
             publisherName: 'Ravi Singh',
           );
         },
-        itemCount: 30,
+        itemCount: 5,
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
       ),

@@ -49,7 +49,7 @@ class DmBlogPostCard extends StatelessWidget {
               ),
             ): Container(),
           ],
-          ) : Container(),
+        ) : Container(),
         Align(
           alignment: Alignment.centerLeft,
           child: Container(

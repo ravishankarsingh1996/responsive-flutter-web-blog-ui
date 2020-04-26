@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter_web_blog_ui/widget/dmFooter/dm_footer.dart';
 import 'package:responsive_flutter_web_blog_ui/widget/dm_carousel_widget.dart';
 
 import 'blog_list_vertical.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,6 +25,8 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     DMCarouselWidget(),
                     BlogListWidget(),
+                    Divider(color: Color(0xFFEEEEEE), thickness: 1),
+                    kIsWeb ? DMFooterWidget() : Container()
                   ],
                 ),
               ),
@@ -33,5 +37,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-

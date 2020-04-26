@@ -61,10 +61,10 @@ class CarouselWidget extends StatelessWidget {
           width: double.maxFinite,
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
-            ColorUtils.colorGradient1,
-            ColorUtils.colorGradient2,
-            ColorUtils.colorGradient1,
-          ])),
+                ColorUtils.colorGradient1,
+                ColorUtils.colorGradient2,
+                ColorUtils.colorGradient1,
+              ])),
         ),
         Positioned(
           top: 15,
@@ -72,7 +72,7 @@ class CarouselWidget extends StatelessWidget {
           right: kIsWeb ? null : 150,
           child: Container(
               padding:
-                  EdgeInsets.only(left: 30, top: 10, bottom: 10, right: 20),
+              EdgeInsets.only(left: 30, top: 10, bottom: 10, right: 20),
               decoration: BoxDecoration(
                   color: ColorUtils.colorBlueGrey,
                   borderRadius: BorderRadius.only(
@@ -82,7 +82,7 @@ class CarouselWidget extends StatelessWidget {
               child: Text(
                 'A New Way Of Technical Blogging',
                 style:
-                    TextStyle(color: ColorUtils.colorWhite, fontSize: 15),
+                TextStyle(color: ColorUtils.colorWhite, fontSize: 15),
               )),
         ),
         Positioned(
@@ -101,7 +101,7 @@ class CarouselWidget extends StatelessWidget {
               Text(
                 'DevMins',
                 style:
-                    TextStyle(color: ColorUtils.colorWhite, fontSize: 25),
+                TextStyle(color: ColorUtils.colorWhite, fontSize: 25),
               ),
             ],
           ),
