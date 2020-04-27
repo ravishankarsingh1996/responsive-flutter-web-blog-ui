@@ -17,7 +17,7 @@ class DMFooterWidget extends StatelessWidget {
         constraints: BoxConstraints(minHeight: 100, maxHeight: double.infinity),
         child: GridView(
           gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: crossAxisCount,childAspectRatio: 0.99999 ),
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: crossAxisCount,childAspectRatio: 0.99999, ),
           physics: AlwaysScrollableScrollPhysics(),
           shrinkWrap: true,
           children: <Widget>[

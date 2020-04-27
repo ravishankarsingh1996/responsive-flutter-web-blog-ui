@@ -17,8 +17,11 @@ class DmBlogPostCard extends StatelessWidget {
   const DmBlogPostCard({Key key, this.imageUrl, this.title, this.shortDescription, this.publisherImageUrl, this.publisherName, this.postTag = ''}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
+    double width = size.width;
     return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         imageUrl !=null ? Stack(
           children: <Widget>[
@@ -27,7 +30,7 @@ class DmBlogPostCard extends StatelessWidget {
               child: Image.network(
                 imageUrl,
                 width: width,
-                height: width / 2,
+                height: size.width * 0.3,
                 fit: BoxFit.fill,
               ),
             ),
@@ -50,40 +53,48 @@ class DmBlogPostCard extends StatelessWidget {
             ): Container(),
           ],
         ) : Container(),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            margin: EdgeInsets.only(bottom: 12),
-            child: Text(
-              title,
-              style: TextStyle(
-                  fontSize: 26,
-                  color: ColorUtils.colorBlack,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.w300),
+      Container(
+        color: Colors.grey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 12),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 26,
+                      color: ColorUtils.colorBlack,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
             ),
-          ),
+            shortDescription !=null ? Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 12),
+                child: Text(
+                  shortDescription,
+                  style: GoogleFonts.openSans(
+                      textStyle: TextStyle(fontSize: 14, color: ColorUtils.colorBlack)),
+                ),
+              ),
+            ): Container(),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 12),
+                child: DMReadMoreButton(
+                  onPressed: () => Navigator.pushNamed(context, Routes.blogPost),
+                ),
+              ),
+            )
+          ],
         ),
-        shortDescription !=null ? Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            margin: EdgeInsets.only(bottom: 12),
-            child: Text(
-              shortDescription,
-              style: GoogleFonts.openSans(
-                  textStyle: TextStyle(fontSize: 14, color: ColorUtils.colorBlack)),
-            ),
-          ),
-        ): Container(),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            margin: EdgeInsets.only(bottom: 12),
-            child: DMReadMoreButton(
-              onPressed: () => Navigator.pushNamed(context, Routes.blogPost),
-            ),
-          ),
-        )
+      )
       ],
     );
   }
