@@ -2,8 +2,8 @@
 
 ## Web Preview
 
-[![IMAGE ALT TEXT HERE](extras/web.png)]
+![IMAGE ALT TEXT HERE](extras/web.png)
 
 ## Mobile Preview
 
-[![IMAGE ALT TEXT HERE](extras/mobile.png)]
+![IMAGE ALT TEXT HERE](extras/mobile.png)
