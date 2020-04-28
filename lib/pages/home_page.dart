@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
             ),
             IconButton(
               icon: Icon(
-                Icons.trending_up,
+                Icons.bookmark,
                 color: Colors.white,
               ),
               onPressed: () {},
