@@ -88,6 +88,44 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.center,
         ),
       ),
+      bottomNavigationBar: !kIsWeb
+          ? BottomAppBar(
+        color: Colors.blue,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.trending_up,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      )
+          : null,
     );
   }
 }
