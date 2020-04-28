@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_flutter_web_blog_ui/utils/style_utils.dart';
 import 'package:responsive_flutter_web_blog_ui/widget/dmFooter/dm_footer.dart';
 import 'package:responsive_flutter_web_blog_ui/widget/dm_carousel_widget.dart';
 
@@ -32,6 +33,59 @@ class _HomePageState extends State<HomePage> {
               ),
             )
           ],
+        ),
+      ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        actions: <Widget>[
+          !kIsWeb
+              ? IconButton(
+            icon: Icon(Icons.notifications),
+            onPressed: () {},
+          )
+              : Container(),
+          kIsWeb
+              ? Wrap(
+            children: <Widget>[
+              FlatButton(
+                onPressed: () => Navigator.popUntil(context,
+                    ModalRoute.withName(Navigator.defaultRouteName)),
+                child: Text(
+                  "HOME",
+                  style: buttonTextStyle,
+                ),
+                splashColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+              FlatButton(
+                onPressed: () {},
+                child: Text(
+                  "ABOUT",
+                  style: buttonTextStyle,
+                ),
+                splashColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+              FlatButton(
+                onPressed: () {},
+                child: Text(
+                  "CONTACT",
+                  style: buttonTextStyle,
+                ),
+                splashColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+            ],
+          )
+              : Container(),
+        ],
+        title: Image.network(
+          'https://community.devmins.com/graphics/white-logo-Artboard-1-copy-9.png',
+          height: 50,
+          alignment: Alignment.center,
         ),
       ),
     );
