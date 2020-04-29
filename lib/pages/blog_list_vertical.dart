@@ -21,18 +21,18 @@ class _BlogListWidgetState extends State<BlogListWidget> {
     if (size.width == size.height) {
       childAspectRatio = 1.0;
     } else if (size.width > size.height) {
-      childAspectRatio = (size.width / size.height) * 0.5 ;
+      childAspectRatio = (size.height / size.width) * 0.6 ;
     }else{
-      childAspectRatio = (size.height / size.width) ;
+      childAspectRatio = (size.width / size.height) ;
     }
     return Container(
       constraints: BoxConstraints(minHeight: 10, maxHeight: double.infinity),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 550,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: childAspectRatio),
+            maxCrossAxisExtent: 1000,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 5,
+        childAspectRatio: 1),
         itemBuilder: (context, index) {
           return DmBlogPostCard(
             imageUrl:

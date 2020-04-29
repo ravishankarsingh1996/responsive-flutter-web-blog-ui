@@ -20,41 +20,45 @@ class DmBlogPostCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     double width = size.width;
     return Column(
-      mainAxisSize: MainAxisSize.max,
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        imageUrl !=null ? Stack(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 24),
-              child: Image.network(
-                imageUrl,
-                width: width,
-                height: size.width * 0.3,
-                fit: BoxFit.fill,
-              ),
-            ),
-            postTag.isNotEmpty ? Positioned(
-              top: 40,
-              right: 0,
-              child: Container(
-                padding: EdgeInsets.only(left: 15, top: 5, bottom: 5, right: 15),
-                decoration: BoxDecoration(
-                    color: ColorUtils.colorDeepOrange,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      topLeft: Radius.circular(30),
-                    )),
-                child: Text(
-                  'New',
-                  style: TextStyle(color: ColorUtils.colorWhite, fontSize: 12),
+        imageUrl !=null ? Container(
+         constraints: BoxConstraints(minHeight: 350, maxHeight: 800),
+          child: Stack(
+            fit: StackFit.passthrough,
+            children: <Widget>[
+              Container(
+                color: Colors.yellow,
+                margin: EdgeInsets.symmetric(vertical: 24),
+                child: Image.network(
+                  imageUrl,
+                  width: width,
+                  height: size.width * 0.3,
+                  fit: BoxFit.fill,
                 ),
               ),
-            ): Container(),
-          ],
+              postTag.isNotEmpty ? Positioned(
+                top: 40,
+                right: 0,
+                child: Container(
+                  padding: EdgeInsets.only(left: 15, top: 5, bottom: 5, right: 15),
+                  decoration: BoxDecoration(
+                      color: ColorUtils.colorDeepOrange,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(30),
+                        topLeft: Radius.circular(30),
+                      )),
+                  child: Text(
+                    'New',
+                    style: TextStyle(color: ColorUtils.colorWhite, fontSize: 12),
+                  ),
+                ),
+              ): Container(),
+            ],
+          ),
         ) : Container(),
       Container(
-        color: Colors.grey,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -75,9 +79,11 @@ class DmBlogPostCard extends StatelessWidget {
             shortDescription !=null ? Align(
               alignment: Alignment.centerLeft,
               child: Container(
-                margin: EdgeInsets.only(bottom: 12),
+                margin: EdgeInsets.only(bottom: 5),
                 child: Text(
                   shortDescription,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.openSans(
                       textStyle: TextStyle(fontSize: 14, color: ColorUtils.colorBlack)),
                 ),
