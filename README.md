@@ -1,4 +1,6 @@
-# responsive_flutter_web_blog_ui
+# Responsive Flutter Web Blog UI Template
+
+This repository code is supported for web as well as mobile devices.
 
 ## Web Preview
 
