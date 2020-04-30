@@ -1,4 +1,4 @@
-# responsive_flutter_web_blog_ui
+# Responsive Flutter Web Blog UI
 
 ## Web Preview
 
